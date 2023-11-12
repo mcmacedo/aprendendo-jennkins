@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-user') {
-                        img.push('${env.BUILD_ID}')
+                        img.push()
                     }
                 }
             }
