@@ -5,7 +5,7 @@ pipeline {
         stage ('Build Docker Image') {
             steps {
                 script {
-                    img = docker.build("mcmacedo/jenkins-basico-veronez", '-f Dockerfile')
+                    img = docker.build("mcmacedo/jenkins-basico-veronez")
                 }
             }
         }
