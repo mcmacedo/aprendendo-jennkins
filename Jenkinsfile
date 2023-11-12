@@ -2,9 +2,11 @@ pipeline {
     agent any // Utilizará qualquer pipeline, depois ver como utilizar `container agents`
 
     stages {
-        stage ('Inicial') {
+        stage ('Build Docker Image') {
             steps {
-                echo 'Inicicando a pipeline'
+                script {
+                    img = docker.build("mcmacedo/jenkins-basico-veronez", '-f Dockerfile')
+                }
             }
         }
     }
